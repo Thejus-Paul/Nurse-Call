@@ -2,14 +2,46 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Nurse Call v1.0.0</title>
-        <link rel="stylesheet" 
+        <title>Nurse Call v1.0.1</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {background: #444;}
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: #29B6F6;
+            font-weight: bold;
+            color: #eee;
+            border: none;
+            border-radius: 100px;
+            width: 175px;
+            height: 50px;
+            font-variant: small-caps;
+            font-size: 1.1rem;
+            outline: 0px;
+            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+            transform: translate(-50%, -50%);
+            transition: all .2s ease-in;
+        }
+        .btn:hover {background-color: #039BE5;}
+        .btn:active {
+            outline: none;
+            width: 150px;
+            height: 45px;
+        }
+        .btn-request,.btn-request:hover  {background-color: #F9A825;}
+        .btn-accepted,.btn-accepted:hover  {background-color: #8BC34A;}
+        </style>
     </head>
     <body>
-            <ul id="messages"></ul>
         <form action="">
-            <input type="text" id="m" value="request"/>
-            <button>Call</button>
+            <input type="hidden" id="m" value="request"/>
+            <button class="btn">Call</button>
         </form>
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
@@ -23,7 +55,16 @@
             return false;
             });
             socket.on('chat message', function(msg){
-            $('#messages').append($('<li>').text(msg));
+            if(msg === "request") {
+                $('.btn').addClass('btn-request').text('Wait');
+            }
+            else if(msg === "accepted") {
+                $('.btn').addClass('btn-accepted').text('On the Way');
+                setTimeout(function() {
+                $('.btn').removeClass('btn-request').removeClass('btn-accepted').text('Call');
+                $('#m').val('request');
+                }, 5000);
+            }
             });
         });
         </script>
