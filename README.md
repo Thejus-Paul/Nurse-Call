@@ -12,6 +12,11 @@ These instructions will get you a copy of the project up and running on your loc
 4. Edit Name in ```config.json``` file present in ```/nurse-call-client/resources/app/```
 5. Run ```nurse-call.exe```
 
+## Downloads
+
+* Windows 7 and later 64-bit: [nurse-call-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-client/binaries/nurse-call-win32-x64.zip)
+* Windows 7 and later 64-bit: [nurse-call-server-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-server/binaries/nurse-call-server-win32-x64.zip)
+
 ## Built With
 
 * [NodeJS](https://nodejs.org/en/) - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
