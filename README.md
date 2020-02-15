@@ -6,11 +6,11 @@ An application that can be used by doctors to request for a nurse from a nurse s
 
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.
 
-1. Download the binaries of ```nurse-call-client``` and ```nurse-call-server```
-2. Extract both the files
-3. Run ```nurse-call-server.exe```
-4. Edit Name in ```config.json``` file present in ```/nurse-call-client/resources/app/```
-5. Run ```nurse-call.exe```
+1. Download both zip files from Downloads.
+2. Extract both the files.
+3. Run ```nurse-call-server.exe```.
+4. Edit Name in ```config.json``` file present in ```/nurse-call-client/resources/app/```.
+5. Run ```nurse-call.exe```.
 
 ## Downloads
 
