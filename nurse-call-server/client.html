@@ -40,31 +40,33 @@
     </head>
     <body>
         <form action="">
-            <input type="hidden" id="m" value="request"/>
+            <input type="hidden" id="m"/>
             <button class="btn">Call</button>
         </form>
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
         <script>
         $(function () {
+            let name = window.location.href.split('/').pop();
             var socket = io('localhost:3000');
             $('form').submit(function(e){
+            $('#m').val('request');
             e.preventDefault(); // prevents page reloading
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
+            socket.emit('chat message', (name +' '+ $('#m').val()));
             return false;
             });
+            
             socket.on('chat message', function(msg){
-            if(msg === "request") {
-                $('.btn').addClass('btn-request').text('Wait');
-            }
-            else if(msg === "accepted") {
-                $('.btn').addClass('btn-accepted').text('On the Way');
-                setTimeout(function() {
-                $('.btn').removeClass('btn-request').removeClass('btn-accepted').text('Call');
-                $('#m').val('request');
-                }, 5000);
-            }
+                if(msg === (name + " request")) {
+                    $('.btn').addClass('btn-request').text('Wait');
+                }
+                else if(msg === (name + " accepted")) {
+                    $('.btn').addClass('btn-accepted').text('On the Way');
+                    setTimeout(function() {
+                    $('.btn').removeClass('btn-request').removeClass('btn-accepted').text('Call');
+                    $('#m').val('request');
+                    }, 10000);
+                }
             });
         });
         </script>

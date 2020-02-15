@@ -1,13 +1,16 @@
 const {app, BrowserWindow} = require('electron')
 const url = require('url')
-const path = require('path')
+const config = require('./config.json')
+
 
 let win
+
+console.log(config)
 
 function createWindow() {
     win = new BrowserWindow({width: 300, height: 200})
     win.loadURL(url.format({
-        pathname: 'localhost:3002',
+        pathname: config['station']+'/'+config['name'],
         protocol: 'http:',
         slashes: true
     }))

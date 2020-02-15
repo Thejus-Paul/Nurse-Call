@@ -9,7 +9,7 @@
   "author": "Thejus Paul",
   "license": "ISC",
   "dependencies": {
-    "electron": "^7.1.7"
+    "electron": "^8.0.1"
   },
   "devDependencies": {
     "electron-packager": "^14.1.1"

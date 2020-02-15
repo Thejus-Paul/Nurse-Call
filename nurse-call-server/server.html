@@ -3,28 +3,74 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Nurse Station</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-weight: bold;
+                font-variant: small-caps;
+            }
+
+            body {
+                background-color: #455A64;
+                font-family: sans-serif;
+                color: white;
+            }
+            .form-box {
+                display: none;
+                background-color: #333;
+                margin: 20px;
+                padding: 20px;
+            }
+            .visible {
+                display: block;
+            }
+            form {
+                display: flex;
+                justify-content: space-between;
+                align-items:center;
+            }
+            .btn {
+                border: none;
+                background: #8BC34A;                
+                color: #fff;
+                padding: 15px 50px;
+                border-radius: 100px;
+            }
+            .btn:hover {
+                background: rgb(87, 161, 1);
+            }
+        </style>
+        <title>Nurse Station v1.0.0</title>
     </head>
     <body>
-        <ul id="messages"></ul>
-        <form action="">
-            <input type="text" id="m"/>
-            <button>Send</button>
-        </form>
+        <div class="box">
+
+        </div>
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
         <script>
         $(function () {
             var socket = io();
-            $('form').submit(function(e){
-            e.preventDefault(); // prevents page reloading
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
-            return false;
-            });
+
             socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-    });
+                if(msg.split(' ')[1] === "request") {
+                    let form = $('<div class="form-box '+ msg.split(' ')[0] +' visible"><form action=""><span>'+ msg.split(' ')[0] +'</span><input type="hidden" id="m"/><button class="btn">Accept</button></form></div>')
+                    $('.box').append(form);
+                    $('form').submit(function(e){
+                        $('#m').val(($(this).children('span').text() +' accepted'));
+                        e.preventDefault(); // prevents page reloading
+                        let name = document.getElementsByTagName('span')[0].innerHTML;
+                        socket.emit('chat message', $('#m').val());
+                        return false;
+                    });
+                }
+                else if(msg.split(' ')[1] === "accepted") {
+                        $(('.'+ msg.split(' ')[0])).remove();
+                }
+                
+            });
         });
         </script>
     </body>
