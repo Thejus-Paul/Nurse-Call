@@ -9,13 +9,13 @@ These instructions will get you a copy of the project up and running on your loc
 1. Download both zip files from Downloads.
 2. Extract both the files.
 3. Run ```nurse-call-server.exe```.
-4. Edit Name in ```config.json``` file present in ```/nurse-call-client/resources/app/```.
+4. Edit name to prefered name and station to the server local IP address in ```config.json``` file present in ```/nurse-call-client/resources/app/```.
 5. Run ```nurse-call.exe```.
 
 ## Downloads
 
-* Windows 7 and later 64-bit: [nurse-call-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-client/binaries/nurse-call-win32-x64.zip)
-* Windows 7 and later 64-bit: [nurse-call-server-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-server/binaries/nurse-call-server-win32-x64.zip)
+* Windows 7 and later 64-bit: [nurse-call-client-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-client/binaries/nurse-call-client-win32-x64.zip)
+													[nurse-call-server-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-server/binaries/nurse-call-server-win32-x64.zip)
 
 ## Built With
 

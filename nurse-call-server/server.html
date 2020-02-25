@@ -25,6 +25,12 @@
             }
             .visible {
                 display: block;
+                animation: pulse 1s infinite ease;
+            }
+            @keyframes pulse {
+                0% {border: 2px solid transparent;}
+                50% {border: 2px solid white;}
+                100% {border: 2px solid transparent;}
             }
             form {
                 display: flex;
@@ -45,17 +51,21 @@
         <title>Nurse Station v1.0.0</title>
     </head>
     <body>
+        <audio class="my_audio" loop src="http://soundbible.com/grab.php?id=2160&type=mp3">
+        </audio>
         <div class="box">
 
         </div>
-        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
         <script>
         $(function () {
             var socket = io();
 
             socket.on('chat message', function(msg){
+               
                 if(msg.split(' ')[1] === "request") {
+                    $(".my_audio").trigger('play');
                     let form = $('<div class="form-box '+ msg.split(' ')[0] +' visible"><form action=""><span>'+ msg.split(' ')[0] +'</span><input type="hidden" id="m"/><button class="btn">Accept</button></form></div>')
                     $('.box').append(form);
                     $('form').submit(function(e){
@@ -68,6 +78,7 @@
                 }
                 else if(msg.split(' ')[1] === "accepted") {
                         $(('.'+ msg.split(' ')[0])).remove();
+                        if($('.box').children().length === 0) $(".my_audio").trigger('pause');
                 }
                 
             });
