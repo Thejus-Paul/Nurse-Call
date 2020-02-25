@@ -29,7 +29,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * **Thejus Paul** - *Initial work* - [Thejus Paul](https://github.com/Thejus-Paul)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/thejus-paul/nurse-call/graphs/contributors) who participated in this project.
 
 ## License
 
