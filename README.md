@@ -15,9 +15,9 @@ These instructions will get you a copy of the project up and running on your loc
 ## Downloads
 
 ### Client
-* Windows 7 and later 64-bit: [nurse-call-client-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-client/binaries/nurse-call-client-win32-x64.zip)
+* Windows 7 and later 64-bit: [nurse-call-client-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/raw/master/nurse-call-client/binaries/nurse-call-client-win32-x64.zip)
 ### Server
-* Windows 7 and later 64-bit: [nurse-call-server-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/blob/master/nurse-call-server/binaries/nurse-call-server-win32-x64.zip)
+* Windows 7 and later 64-bit: [nurse-call-server-win32-x64.zip](https://github.com/Thejus-Paul/Nurse-Call/raw/master/nurse-call-server/binaries/nurse-call-server-win32-x64.zip)
 
 ## Built With
 
