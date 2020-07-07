@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "The Server Side of Nurse Call. This app will be hosted in each Nurse Station.",
     "dependencies": {
-        "electron": "^8.0.1",
+        "electron": "^8.2.4",
         "express": "^4.17.1",
         "socket.io": "^2.3.0"
     },
