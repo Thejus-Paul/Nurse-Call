@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "The Server Side of Nurse Call. This app will be hosted in each Nurse Station.",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "pack": "electron-packager . nurse-station --overwrite --asar --platform=win32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Nurse Station'"
     },
     "dependencies": {
         "electron": "^8.5.1",
@@ -11,6 +12,7 @@
         "socket.io": "^2.3.0"
     },
     "devDependencies": {
-        "electron-packager": "^15.1.0"
+        "electron-packager": "^15.1.0",
+        "electron-winstaller": "^4.0.1"
     }
 }
