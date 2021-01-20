@@ -2,6 +2,10 @@
 
 An application that can be used by doctors to request for a nurse from a nurse station.
 
+# Demo
+
+<img src="https://i.imgur.com/NHqzUK5.gif" alt="Demo Video" />
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for testing purposes.
